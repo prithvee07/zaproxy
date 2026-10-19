@@ -107,7 +107,7 @@ class CoreAPIUnitTest {
         // When
         Path childPath = CoreAPI.getChildPath(parent, child);
         // Then
-        assertThat(childPath.toString(), is(equalTo(parent + "/" + child)));
+        assertThat(childPath, is(equalTo(Path.of("/tmp/test/file.txt"))));
     }
 
     @Test
@@ -118,7 +118,7 @@ class CoreAPIUnitTest {
         // When
         Path childPath = CoreAPI.getChildPath(parent, child);
         // Then
-        assertThat(childPath.toString(), is(equalTo(parent + child)));
+        assertThat(childPath, is(equalTo(Path.of("/tmp/test/a/b/ccc/file.txt"))));
     }
 
     @Test
